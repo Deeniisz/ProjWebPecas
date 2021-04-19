@@ -1,0 +1,17 @@
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\bin\Debug\Dal.dll
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\bin\Debug\Dal.pdb
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\bin\Debug\System.Security.AccessControl.dll
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\bin\Debug\System.Security.Permissions.dll
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\bin\Debug\System.Security.Permissions.xml
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\obj\Debug\Dal.csprojAssemblyReference.cache
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\obj\Debug\Dal.csproj.CoreCompileInputs.cache
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\obj\Debug\Dal.csproj.CopyComplete
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\obj\Debug\Dal.dll
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\obj\Debug\Dal.pdb
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\bin\Debug\Model.dll
+C:\Users\Denis\source\repos\ProjWebPecas\Dal\bin\Debug\Model.pdb

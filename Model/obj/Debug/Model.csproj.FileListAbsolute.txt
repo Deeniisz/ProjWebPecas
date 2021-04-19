@@ -1,0 +1,6 @@
+C:\Users\Denis\source\repos\ProjWebPecas\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Denis\source\repos\ProjWebPecas\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Denis\source\repos\ProjWebPecas\Model\bin\Debug\Model.dll
+C:\Users\Denis\source\repos\ProjWebPecas\Model\bin\Debug\Model.pdb
+C:\Users\Denis\source\repos\ProjWebPecas\Model\obj\Debug\Model.dll
+C:\Users\Denis\source\repos\ProjWebPecas\Model\obj\Debug\Model.pdb

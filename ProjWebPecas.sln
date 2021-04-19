@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjP1LojaPecas", "ProjP1LojaPecas\ProjP1LojaPecas.csproj", "{C6D02C8B-ACAC-47C7-8844-858E30860403}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal", "Dal\Dal.csproj", "{3CD41AE2-F727-4B59-9A0B-1E199685CB19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{23D57985-0231-401E-972F-9C7C70A8785F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6D02C8B-ACAC-47C7-8844-858E30860403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6D02C8B-ACAC-47C7-8844-858E30860403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6D02C8B-ACAC-47C7-8844-858E30860403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6D02C8B-ACAC-47C7-8844-858E30860403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD41AE2-F727-4B59-9A0B-1E199685CB19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD41AE2-F727-4B59-9A0B-1E199685CB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD41AE2-F727-4B59-9A0B-1E199685CB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD41AE2-F727-4B59-9A0B-1E199685CB19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D57985-0231-401E-972F-9C7C70A8785F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D57985-0231-401E-972F-9C7C70A8785F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D57985-0231-401E-972F-9C7C70A8785F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D57985-0231-401E-972F-9C7C70A8785F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C18D7FF-1C1D-49CA-A154-386A0012D5A9}
+	EndGlobalSection
+EndGlobal
