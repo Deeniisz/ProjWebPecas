@@ -31,10 +31,10 @@ namespace Dal
             {
                 var item = new Peca()
                 {
-                    Id = int.Parse(returnData["id"].ToString()),
-                    Tipo = returnData["tipo"].ToString(),
-                    Marca = returnData["marca"].ToString(),
-                    Descricao = returnData["descricao"].ToString()
+                    Id = long.Parse(returnData["Id"].ToString()),
+                    Tipo = returnData["Tipo"].ToString(),
+                    Marca = returnData["Marca"].ToString(),
+                    Descricao = returnData["Descricao"].ToString()
 
                 };
                 lst.Add(item);
@@ -54,7 +54,7 @@ namespace Dal
             return status;
         }
 
-        public Peca SelectById(int id)
+        public Peca SelectById(long id)
         {
             string sql = string.Format(Peca.GETBYID, id);
             Peca peca;
@@ -70,6 +70,17 @@ namespace Dal
         {
             bool status = false;
             string sql = string.Format(Peca.UPDATE, peca.Tipo, peca.Marca, peca.Descricao, peca.Id);
+
+            using (var connection = new DB())
+            {
+                status = connection.ExecQuery(sql);
+            }
+            return status;
+        }
+        public bool Delete(long id)
+        {
+            bool status = false;
+            string sql = string.Format(Peca.DELETE, id);
 
             using (var connection = new DB())
             {

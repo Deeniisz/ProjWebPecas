@@ -20,6 +20,7 @@ namespace Model
         public const string GETALL = "SELECT Id, Nome, Email, Cidade, Estado, Rua, Numero FROM TB_CLIENTE";
         public const string GETBYID = "SELECT Id, Nome, Email, Cidade, Estado, Rua, Numero FROM TB_CLIENTE WHERE id = {0}";
         public const string UPDATE = "UPDATE TB_CLIENTE SET Nome = '{0}', Email = '{1}', Cidade = '{2}', Estado = '{3}', Rua = '{4}', Numero = '{5}' WHERE Id = {6}";
+        public const string DELETE = "DELETE FROM TB_CLIENTE WHERE id = {0}";
         public const string GETID = "SELECT Id FROM TB_CLIENTE ";
     }
 }

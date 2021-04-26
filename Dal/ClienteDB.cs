@@ -57,7 +57,7 @@ namespace Dal
             return status;
         }
 
-        public Cliente SelectById(int id)
+        public Cliente SelectById(long id)
         {
             string sql = string.Format(Cliente.GETBYID, id);
             Cliente cliente;
@@ -73,6 +73,17 @@ namespace Dal
         {
             bool status = false;
             string sql = string.Format(Cliente.UPDATE, cliente.Nome, cliente.Email, cliente.Cidade, cliente.Estado, cliente.Rua, cliente.Numero, cliente.Id);
+
+            using (var connection = new DB())
+            {
+                status = connection.ExecQuery(sql);
+            }
+            return status;
+        }
+        public bool Delete(long id)
+        {
+            bool status = false;
+            string sql = string.Format(Cliente.DELETE, id);
 
             using (var connection = new DB())
             {

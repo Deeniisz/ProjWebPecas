@@ -57,6 +57,7 @@ namespace ProjP1LojaPecas
                 Id = long.Parse(txtID.Text),
                 Tipo = txtTipo.Text,
                 Marca = txtMarca.Text,
+                Descricao = txtDescricao.Text
             };
         }
 
@@ -65,15 +66,13 @@ namespace ProjP1LojaPecas
             Cliente cliente = getDataCliente();
             var db = new ClienteDB();
 
-            if (cliente.Id == 0)
+            
+            if (db.Insert(cliente))
             {
-                if (db.Insert(cliente))
-                {
-                    lblMSG2.Text = "Registro inserido!";
-                }
-                else
-                    lblMSG2.Text = "Erro ao inserir registro";
+                lblMSG2.Text = "Registro inserido!";
             }
+            else
+                lblMSG2.Text = "Erro ao inserir registro";
 
             LoadGrid();
 
@@ -89,47 +88,121 @@ namespace ProjP1LojaPecas
                 Cidade = txtCidade2.Text,
                 Estado = txtEstado2.Text,
                 Rua = txtRua2.Text,
-                Numero = int.Parse(txtNumero2.Text),            
+                Numero = long.Parse(txtNumero2.Text),            
+            };
+        }
+        private Venda getDataVenda()
+        {
+            Cliente cliente = new Cliente();
+            return new Venda()
+            {     
+                
+                Id = long.Parse(txtID3.Text),
+                Cliente = long.Parse(DropDownList1.Text),
+                Peca = long.Parse(DropDownList2.Text),
+                Descricao = txtDescricao3.Text,
             };
         }
 
-        /*protected void btnSalvar3_Click(object sender, EventArgs e)
+        protected void Button1_Click1(object sender, EventArgs e)
         {
             Venda venda = getDataVenda();
             var db = new VendaDB();
 
-            if (venda.Id == 0)
+
+            if (db.Insert(venda))
             {
-                if (db.Insert(venda))
-                {
-                    lblMSG3.Text = "Registro inserido!";
-                }
-                else
-                    lblMSG3.Text = "Erro ao inserir registro";
+                lblMSG2.Text = "Registro inserido!";
             }
             else
-            {
-
-                if (db.Update(venda))
-                {
-                    lblMSG3.Text = "Registro atualizado!";
-                }
-                else
-                    lblMSG3.Text = "Erro ao atualizar registro";
-            }
+                lblMSG2.Text = "Erro ao inserir registro";
 
             LoadGrid();
         }
-        private Venda getDataVenda()
+
+        protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            return new Venda()
-            {         
-                Id = long.Parse(txtID3.Text)
-                Cliente = null,
-                Peca = null,
-                Descricao = txtDescricao3.Text,
-                Id = string.IsNullOrEmpty(txtID.Text) ? 0 : int.Parse(txtID.Text)
-            };
-        }*/
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GridView2.Rows[index];
+                int id = Convert.ToInt32(row.Cells[0].Text);
+                String ididstring = Convert.ToString(row.Cells[0].Text);
+                var db = new ClienteDB();
+                String numero = Convert.ToString(row.Cells[6].Text);
+
+                if (e.CommandName == "EXCLUIR")
+                {
+                    db.Delete(id);
+                    LoadGrid();
+
+                }
+                else if (e.CommandName == "ALTERAR")
+                {
+                    Cliente cliente = db.SelectById(id);
+
+                    txtID2.Text = ididstring;
+                    txtNome2.Text = cliente.Nome;
+                    txtEmail2.Text = cliente.Email;
+                    txtCidade2.Text = cliente.Cidade;
+                    txtEstado2.Text = cliente.Estado;
+                    txtRua2.Text = cliente.Rua;
+                    txtNumero2.Text = numero;
+                }
+            }
+
+        protected void Gridview1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            GridViewRow row = GridView1.Rows[index];
+
+            int id = Convert.ToInt32(row.Cells[0].Text);
+            String ididstring = Convert.ToString(row.Cells[0].Text);
+            var db = new PecaDB();
+
+            if (e.CommandName == "EXCLUIR")
+            {
+                db.Delete(id);
+                LoadGrid();
+
+            }
+            else if (e.CommandName == "ALTERAR")
+            {
+                Peca peca = db.SelectById(id);
+
+                txtID.Text = ididstring;
+                txtTipo.Text = peca.Tipo;
+                txtMarca.Text = peca.Marca;
+                txtDescricao.Text = peca.Descricao;
+            }
+
+        }
+
+        protected void GridView3_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            GridViewRow row = GridView3.Rows[index];
+
+            int id = Convert.ToInt32(row.Cells[0].Text);
+            String cliente = Convert.ToString(row.Cells[1].Text);
+            String peca = Convert.ToString(row.Cells[2].Text);
+            String ididstring = Convert.ToString(row.Cells[0].Text);
+            var db = new VendaDB();
+
+            if (e.CommandName == "EXCLUIR")
+            {
+                db.Delete(id);
+                LoadGrid();
+
+            }
+            else if (e.CommandName == "ALTERAR")
+            {
+                Venda venda = db.SelectById(id);
+
+                txtID3.Text = ididstring;
+                DropDownList1.Text = cliente;
+                DropDownList2.Text = peca;
+                txtDescricao.Text = venda.Descricao;
+            }
+
+        }
     }
 }

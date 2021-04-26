@@ -11,7 +11,8 @@ namespace Dal
     {
         bool Insert(Cliente cliente);
         bool Update(Cliente cliente);
-        Cliente SelectById(int id);
+        Cliente SelectById(long id);
+        bool Delete(long id);
         List<Cliente> GetAll();
     }
 }

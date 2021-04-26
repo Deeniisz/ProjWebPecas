@@ -17,6 +17,7 @@ namespace Model
         public const string GETALL = "SELECT Id, Tipo, Marca, Descricao FROM TB_PECA";
         public const string GETBYID = "SELECT Id, Tipo, Marca, Descricao FROM TB_PECA WHERE id = {0}";
         public const string UPDATE = "UPDATE TB_PECA SET Tipo = '{0}', Marca = '{1}', Descricao = '{2}' WHERE id = {3}";
+        public const string DELETE = "DELETE FROM TB_PECA WHERE id = {0}";
         public const string GETID = "SELECT Id FROM TB_PECA";
     }
 }

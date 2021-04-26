@@ -11,7 +11,8 @@ namespace Dal
     {
         bool Insert(Venda venda);
         bool Update(Venda venda);
-        Venda SelectById(int id);
+        Venda SelectById(long id);
+        bool Delete(long id);
         List<Venda> GetAll();
     }
 }

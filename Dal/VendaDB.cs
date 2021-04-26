@@ -31,9 +31,9 @@ namespace Dal
             {
                 var item = new Venda()
                 {
-                    Id = int.Parse(returnData["id"].ToString()),
-                    Cliente = (Cliente)returnData[Cliente.GETID],
-                    Peca = (Peca)returnData[Peca.GETID],
+                    Id = long.Parse(returnData["Id"].ToString()),
+                    Cliente = long.Parse(returnData["Cliente"].ToString()),
+                    Peca = long.Parse(returnData["Peca"].ToString()),
                     Descricao = returnData["descricao"].ToString(),
 
 
@@ -55,7 +55,7 @@ namespace Dal
             return status;
         }
 
-        public Venda SelectById(int id)
+        public Venda SelectById(long id)
         {
             string sql = string.Format(Venda.GETBYID, id);
             Venda venda;
@@ -70,7 +70,7 @@ namespace Dal
         public bool Update(Venda venda)
         {
             bool status = false;
-            string sql = string.Format(Venda.UPDATE, venda.Cliente, venda.Peca, venda.Descricao);
+            string sql = string.Format(Venda.UPDATE, venda.Id, venda.Cliente, venda.Peca, venda.Descricao);
 
             using (var connection = new DB())
             {
@@ -79,5 +79,16 @@ namespace Dal
             return status;
         }
 
+        public bool Delete(long id)
+        {
+            bool status = false;
+            string sql = string.Format(Venda.DELETE, id);
+
+            using (var connection = new DB())
+            {
+                status = connection.ExecQuery(sql);
+            }
+            return status;
+        }
     }
 }
