@@ -8,15 +8,15 @@ namespace Model
 {
     public class Venda
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Descricao { get; set; }
         public Cliente Cliente { get; set; }
         public Peca Peca { get; set; }
 
-        public const string INSERT = "INSERT INTO TB_VENDA(cliente, peca, descricao) VALUES ('{0}', '{1}', '{2}')";
-        public const string GETALL = "SELECT id, cliente, peca, descricao FROM TB_VENDA";
-        public const string GETBYID = "SELECT id, cliente, peca, descricao FROM TB_VENDA WHERE id = {0}";
-        public const string DELETE = "DELETE FROM TB_VENDA WHERE id = {0}";
-        public const string UPDATE = "UPDATE TB_VENDA SET cliente = '{0}', peca = '{1}', descricao = '{2}' WHERE id = {3}";
+        public const string INSERT = "INSERT INTO TB_VENDA(Id, Cliente, Peca, Descricao) VALUES ('{0}', '{1}', '{2}', '{3}')";
+        public const string GETALL = "SELECT Id, Cliente, Peca, Descricao FROM TB_VENDA";
+        public const string GETBYID = "SELECT Id, Cliente, Peca, Descricao FROM TB_VENDA WHERE id = {0}";
+        public const string UPDATE = "UPDATE TB_VENDA SET Cliente = '{0}', Peca = '{1}', Descricao = '{2}' WHERE Id = {3}";
+        public const string GETID = "SELECT Id FROM TB_VENDA";
     }
 }

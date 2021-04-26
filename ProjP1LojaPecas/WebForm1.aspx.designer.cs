@@ -69,13 +69,13 @@ namespace ProjP1LojaPecas
         protected global::System.Web.UI.WebControls.TextBox txtNome2;
 
         /// <summary>
-        /// DDLCliente control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLCliente;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
         /// txtMarca control.
@@ -96,13 +96,13 @@ namespace ProjP1LojaPecas
         protected global::System.Web.UI.WebControls.TextBox txtEmail2;
 
         /// <summary>
-        /// DDLPeca control.
+        /// DropDownList2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLPeca;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
 
         /// <summary>
         /// txtDescricao control.
@@ -193,15 +193,6 @@ namespace ProjP1LojaPecas
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMSG2;
-
-        /// <summary>
-        /// btnSalvar3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvar3;
 
         /// <summary>
         /// lblMSG3 control.

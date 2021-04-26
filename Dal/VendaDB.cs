@@ -70,7 +70,7 @@ namespace Dal
         public bool Update(Venda venda)
         {
             bool status = false;
-            string sql = string.Format(Venda.UPDATE, venda.Id, venda.Cliente, venda.Peca, venda.Descricao);
+            string sql = string.Format(Venda.UPDATE, venda.Cliente, venda.Peca, venda.Descricao);
 
             using (var connection = new DB())
             {
@@ -79,16 +79,5 @@ namespace Dal
             return status;
         }
 
-        public bool Delete(int id)
-        {
-            bool status = false;
-            string sql = string.Format(Venda.DELETE, id);
-
-            using (var connection = new DB())
-            {
-                status = connection.ExecQuery(sql);
-            }
-            return status;
-        }
     }
 }

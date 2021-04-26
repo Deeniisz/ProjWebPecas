@@ -31,13 +31,13 @@ namespace Dal
             {
                 var item = new Cliente()
                 {
-                    Id = int.Parse(returnData["id"].ToString()),
-                    Nome = returnData["name"].ToString(),
-                    Email = returnData["email"].ToString(),
-                    Cidade = returnData["cidade"].ToString(),
-                    Estado = returnData["estado"].ToString(),
-                    Rua = returnData["rua"].ToString(),
-                    Numero = returnData["numero"].ToString(),
+                    Id = long.Parse(returnData["Id"].ToString()),
+                    Nome = returnData["Nome"].ToString(),
+                    Email = returnData["Email"].ToString(),
+                    Cidade = returnData["Cidade"].ToString(),
+                    Estado = returnData["Estado"].ToString(),
+                    Rua = returnData["Rua"].ToString(),
+                    Numero = long.Parse(returnData["Numero"].ToString()),
 
                 };
                 lst.Add(item);
@@ -48,7 +48,7 @@ namespace Dal
         public bool Insert(Cliente cliente)
         {
             bool status = false;
-            string sql = string.Format(Cliente.INSERT, cliente.Nome, cliente.Email, cliente.Cidade, cliente.Estado, cliente.Rua, cliente.Numero);
+            string sql = string.Format(Cliente.INSERT, cliente.Id, cliente.Nome, cliente.Email, cliente.Cidade, cliente.Estado, cliente.Rua, cliente.Numero);
 
             using (var connection = new DB())
             {
@@ -72,19 +72,7 @@ namespace Dal
         public bool Update(Cliente cliente)
         {
             bool status = false;
-            string sql = string.Format(Cliente.UPDATE, cliente.Nome, cliente.Email, cliente.Cidade, cliente.Estado, cliente.Rua, cliente.Numero);
-
-            using (var connection = new DB())
-            {
-                status = connection.ExecQuery(sql);
-            }
-            return status;
-        }
-
-        public bool Delete(int id)
-        {
-            bool status = false;
-            string sql = string.Format(Cliente.DELETE, id);
+            string sql = string.Format(Cliente.UPDATE, cliente.Nome, cliente.Email, cliente.Cidade, cliente.Estado, cliente.Rua, cliente.Numero, cliente.Id);
 
             using (var connection = new DB())
             {

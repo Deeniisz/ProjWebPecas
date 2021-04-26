@@ -8,19 +8,18 @@ namespace Model
 {
     public class Cliente
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public string Rua { get; set; }
-        public string Numero { get; set; }
+        public long Numero { get; set; }
 
-        public const string INSERT = "INSERT INTO TB_CLIENTE (nome, email, cidade, estado, rua, numero) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')";
-        public const string GETALL = "SELECT id, nome, email, cidade, estado, rua, numero FROM TB_CLIENTE";
-        public const string GETBYID = "SELECT id, nome, email, cidade, estado, rua, numero FROM TB_CLIENTE WHERE id = {0}";
-        public const string DELETE = "DELETE FROM TB_CLIENTE WHERE id = {0}";
-        public const string UPDATE = "UPDATE TB_CLIENTE SET nome = '{0}', email = '{1}', cidade = '{2}', estado = '{3}', rua = '{4}', numero = '{5}' WHERE id = {6}";
-        public const string GETID = "SELECT id FROM TB_CLIENTE";
+        public const string INSERT = "INSERT INTO TB_CLIENTE (Id, Nome, Email, Cidade, Estado, Rua, Numero) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')";
+        public const string GETALL = "SELECT Id, Nome, Email, Cidade, Estado, Rua, Numero FROM TB_CLIENTE";
+        public const string GETBYID = "SELECT Id, Nome, Email, Cidade, Estado, Rua, Numero FROM TB_CLIENTE WHERE id = {0}";
+        public const string UPDATE = "UPDATE TB_CLIENTE SET Nome = '{0}', Email = '{1}', Cidade = '{2}', Estado = '{3}', Rua = '{4}', Numero = '{5}' WHERE Id = {6}";
+        public const string GETID = "SELECT Id FROM TB_CLIENTE ";
     }
 }

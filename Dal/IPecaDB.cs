@@ -11,7 +11,6 @@ namespace Dal
     {
         bool Insert(Peca peca);
         bool Update(Peca peca);
-        bool Delete(int id);
         Peca SelectById(int id);
         List<Peca> GetAll();
     }

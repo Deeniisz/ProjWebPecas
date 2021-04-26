@@ -31,26 +31,10 @@ namespace ProjP1LojaPecas
             Peca peca = getDataPeca();
             var db = new PecaDB();
 
-            if (peca.Id == 0)
+            if (db.Insert(peca))
             {
-                if (db.Insert(peca))
-                {
-                    lblMSG1.Text = "Registro inserido!";
-                }
-                else
-                    lblMSG1.Text = "Erro ao inserir registro";
+                lblMSG1.Text = "Registro inserido!";
             }
-            else
-            {
-
-                if (db.Update(peca))
-                {
-                    lblMSG1.Text = "Registro atualizado!";
-                }
-                else
-                    lblMSG1.Text = "Erro ao atualizar registro";
-            }
-
             LoadGrid();
         }
 
@@ -70,9 +54,9 @@ namespace ProjP1LojaPecas
         {
             return new Peca()
             {
+                Id = long.Parse(txtID.Text),
                 Tipo = txtTipo.Text,
                 Marca = txtMarca.Text,
-                Id = string.IsNullOrEmpty(txtID.Text) ? 0 : int.Parse(txtID.Text)
             };
         }
 
@@ -90,16 +74,6 @@ namespace ProjP1LojaPecas
                 else
                     lblMSG2.Text = "Erro ao inserir registro";
             }
-            else
-            {
-
-                if (db.Update(cliente))
-                {
-                    lblMSG2.Text = "Registro atualizado!";
-                }
-                else
-                    lblMSG2.Text = "Erro ao atualizar registro";
-            }
 
             LoadGrid();
 
@@ -109,17 +83,17 @@ namespace ProjP1LojaPecas
         {
             return new Cliente()
             {
+                Id = long.Parse(txtID2.Text),
                 Nome = txtNome2.Text,
                 Email = txtEmail2.Text,
                 Cidade = txtCidade2.Text,
                 Estado = txtEstado2.Text,
                 Rua = txtRua2.Text,
-                Numero = txtNumero2.Text,            
-                Id = string.IsNullOrEmpty(txtID.Text) ? 0 : int.Parse(txtID.Text)
+                Numero = int.Parse(txtNumero2.Text),            
             };
         }
 
-        protected void btnSalvar3_Click(object sender, EventArgs e)
+        /*protected void btnSalvar3_Click(object sender, EventArgs e)
         {
             Venda venda = getDataVenda();
             var db = new VendaDB();
@@ -146,15 +120,16 @@ namespace ProjP1LojaPecas
 
             LoadGrid();
         }
-        private Cliente getDataVenda()
+        private Venda getDataVenda()
         {
             return new Venda()
-            {
-                Cliente = DDLCliente.SelectedValue.ToString,
-                Peca = DDLPeca.SelectedValue.ToString,
+            {         
+                Id = long.Parse(txtID3.Text)
+                Cliente = null,
+                Peca = null,
                 Descricao = txtDescricao3.Text,
                 Id = string.IsNullOrEmpty(txtID.Text) ? 0 : int.Parse(txtID.Text)
             };
-        }
+        }*/
     }
 }

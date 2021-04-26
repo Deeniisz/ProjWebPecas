@@ -45,7 +45,7 @@ namespace Dal
         public bool Insert(Peca peca)
         {
             bool status = false;
-            string sql = string.Format(Peca.INSERT, peca.Tipo, peca.Marca, peca.Descricao);
+            string sql = string.Format(Peca.INSERT, peca.Id, peca.Tipo, peca.Marca, peca.Descricao);
 
             using (var connection = new DB())
             {
@@ -70,18 +70,6 @@ namespace Dal
         {
             bool status = false;
             string sql = string.Format(Peca.UPDATE, peca.Tipo, peca.Marca, peca.Descricao, peca.Id);
-
-            using (var connection = new DB())
-            {
-                status = connection.ExecQuery(sql);
-            }
-            return status;
-        }
-
-        public bool Delete(int id)
-        {
-            bool status = false;
-            string sql = string.Format(Peca.DELETE, id);
 
             using (var connection = new DB())
             {
